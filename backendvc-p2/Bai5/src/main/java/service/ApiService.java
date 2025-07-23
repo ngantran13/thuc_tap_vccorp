@@ -33,7 +33,7 @@ public class ApiService {
         }
         return true;
     }
-     /* Chinh sua tren server github */
+    /* Chinh sua hop nhat giua server & client*/
     public static void main(String[] args) {
         port(9999);
         get("/prime", ((request, response) -> {
