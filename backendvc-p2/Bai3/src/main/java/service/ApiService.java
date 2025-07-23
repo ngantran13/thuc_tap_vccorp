@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 import static  spark.Spark.*;
+//bai3+4
 public class ApiService {
     static CacheTTL<Integer,Boolean> cacheTTL=new CacheTTL<>(10,30); //10s truy cập, 30s sống
     public static boolean nguyenTo(int k){
