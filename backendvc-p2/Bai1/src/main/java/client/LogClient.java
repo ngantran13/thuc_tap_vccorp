@@ -12,16 +12,16 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class LogClient {
-    static Logger logger = LoggerFactory.getLogger(LogClient.class);
-    static int oldUser=-1;
-    static long lastLogTime = 0;
+    static Logger logger = LoggerFactory.getLogger(LogClient.class); //loggeer de dung chung cho ca package
+    static int oldUser=-1; //user ra cuoi cung
+    static long lastLogTime = 0; //thoi gian user ra cuoi
     public static String getJson() throws IOException {
         URL url=new URL("http://localhost:9999/data");
         String user="";
         try{
             HttpURLConnection con=(HttpURLConnection) url.openConnection();
-            con.setConnectTimeout(5000);
-            con.setReadTimeout(10);
+            con.setConnectTimeout(5000); //co 5s de ket noi
+            con.setReadTimeout(10); //co 10ms de tra data
             con.setRequestMethod("GET");
 
             // Dữ liệu từ server được truyền theo dòng byte
@@ -45,7 +45,7 @@ public class LogClient {
                 System.out.println(getUser);
                 long now=System.currentTimeMillis();
                 if(oldUser!=-1){
-                    double d=Math.abs(getUser-oldUser)/oldUser;
+                    double d=Math.abs(getUser-oldUser)/oldUser; //tính su thay doi
                     if(d>0.02){
                         logger.info(""+getUser);
                         oldUser=getUser;

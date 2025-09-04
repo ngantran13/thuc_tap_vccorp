@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-
+//xoa dinh ky, kich thuoc toi da cua cache
 public class CacheTTL<K,V> implements Map<K,V> {
     private int m; //time to live
     private int n; //time access

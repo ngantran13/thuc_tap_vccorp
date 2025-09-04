@@ -7,7 +7,7 @@ public class ApiServer {
         port(9999);
         get("/data",(req,res) ->{
             res.type("application/json");
-            int user=new Random().nextInt(501)+4000;
+            int user=new Random().nextInt(501)+4000; //random từ 4000 - 4500
             JsonObject json=new JsonObject();
             json.addProperty("user",user);
             return json.toString();
